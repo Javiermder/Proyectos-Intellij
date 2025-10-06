@@ -21,8 +21,12 @@ public class Cuenta {
         this.saldo += saldo;
     }
 
-    synchronized public void decrementarSaldo(float saldo) {
-       this.saldo -= saldo;
-    }
+    synchronized public boolean decrementarSaldo(float saldo) {
+       if(this.saldo >= saldo) {
+           this.saldo -= saldo;
+           return true;
+       }
+       return false;
+       }
 
 }
