@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9b05b3ca-33ae-4f05-aa3c-4e37f96ab8df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/Proyectos Intellij.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Prueba/Prueba.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/Buffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/Descargador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/java/Reproductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../colaImpresionEj2/src/main/java/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../colaImpresionEj2/src/main/java/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../colaImpresionEj2/src/main/java/Impresora.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../colaImpresionEj2/src/main/java/Impresora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../colaImpresionEj2/src/main/java/colaImpresion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../colaImpresionEj2/src/main/java/colaImpresion.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="34bFW4IY93FqHvaZsyDyPoFscwj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/javie/Documents/Proyectos Intellij/reproductorMultimediaEj3/src",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b05b3ca-33ae-4f05-aa3c-4e37f96ab8df" name="Changes" comment="" />
+      <created>1761474392996</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761474392996</updated>
+      <workItem from="1761474394275" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

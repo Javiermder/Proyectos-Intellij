@@ -16,7 +16,7 @@ public class colaImpresion<T> {
         this(5);
     }
 
-
+    //METODO PARA LOS EMPLEADOS(CONSUMIDORES)
     public void añadirDocumentoCola(T documento) {
 
         synchronized (colaImpresion) {
@@ -28,32 +28,36 @@ public class colaImpresion<T> {
                 }
             }
             colaImpresion.add(documento);
-            System.out.println("Cola: " + colaImpresion.toString());
             colaImpresion.notifyAll();
 
         }
     }
 
+    //METODO PARA LA IMPRESORA(PRODUCTOR)
     public T obterDocumentoCola() {
+
         synchronized (colaImpresion) {
             while (colaImpresion.size() == 0) {
                 try {
+                    //HACEMOS QUE ESPERE COLA MIENTRAS QUE NO SALGA DEL BUCLE PORQUE LA COLA ESTA VACIA
                     colaImpresion.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-
+            //CUANDO SALE DEL BUCLE PORQUE ALGUN PRODUCTOR YA A AÑADIDO ELEMENTOS A LA COLA BORRA EL PRIMERO
             T elemento = colaImpresion.removeFirst();
+            //CUANDO LO BORRA AVISA A LOS PRODUCTORES DE QUE A BORRADO POR SI EN CASO DE QUE ESTE LLENA LA COLA PUEDAN PRODUCIR OTRO
+            colaImpresion.notifyAll();
             return elemento;
 
         }
 
     }
 
-    public void imprimir() {
-        synchronized (this) {
-            System.out.println("Cola " + colaImpresion.toString());
+    public void imprimir(String quiensoy) {
+        synchronized (colaImpresion) {
+            System.out.println(quiensoy +"Cola " + colaImpresion.toString());
         }
     }
 }

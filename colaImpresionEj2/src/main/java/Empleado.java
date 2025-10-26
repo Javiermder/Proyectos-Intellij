@@ -14,12 +14,12 @@ public class Empleado implements Runnable{
         Random random = new Random();
         while(true){
             try {
-                Thread.sleep(random.nextInt(1000));
+                Thread.sleep(random.nextInt(3000));
             }catch(Exception e){
 
             }
             colaImpresion.añadirDocumentoCola("Documento");
-            colaImpresion.imprimir();
+            colaImpresion.imprimir("Soy un empleado y e añadido uno a la cola");
         }
 
 

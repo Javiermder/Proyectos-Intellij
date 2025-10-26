@@ -12,12 +12,12 @@ public class Impresora implements Runnable{
         Random random = new Random();
         while (true) {
             try {
-                Thread.sleep(random.nextInt(1000));
+                Thread.sleep(random.nextInt(2500));
             }catch (InterruptedException e){
                 System.out.println(e);
             }
             colaImpresion.obterDocumentoCola();
-            colaImpresion.imprimir();
+            colaImpresion.imprimir("Soy la impresora y e quitado un documento de la cola");
         }
     }
 }
