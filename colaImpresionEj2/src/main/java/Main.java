@@ -16,6 +16,15 @@ public class Main {
             impresora[i].start();
         }
 
+        for(int i = 0; i < empleados.length; i++) {
+            try {
+                empleados[i].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+
 
 
 

@@ -19,16 +19,16 @@ public class colaImpresion<T> {
     //METODO PARA LOS EMPLEADOS(CONSUMIDORES)
     public void añadirDocumentoCola(T documento) {
 
-        synchronized (colaImpresion) {
+        synchronized (this) {
             while(colaImpresion.size() == max) {
                 try {
-                    colaImpresion.wait();
+                    this.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
             colaImpresion.add(documento);
-            colaImpresion.notifyAll();
+            this.notifyAll();
 
         }
     }
@@ -36,11 +36,11 @@ public class colaImpresion<T> {
     //METODO PARA LA IMPRESORA(PRODUCTOR)
     public T obterDocumentoCola() {
 
-        synchronized (colaImpresion) {
+        synchronized (this) {
             while (colaImpresion.size() == 0) {
                 try {
                     //HACEMOS QUE ESPERE COLA MIENTRAS QUE NO SALGA DEL BUCLE PORQUE LA COLA ESTA VACIA
-                    colaImpresion.wait();
+                    this.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -48,7 +48,7 @@ public class colaImpresion<T> {
             //CUANDO SALE DEL BUCLE PORQUE ALGUN PRODUCTOR YA A AÑADIDO ELEMENTOS A LA COLA BORRA EL PRIMERO
             T elemento = colaImpresion.removeFirst();
             //CUANDO LO BORRA AVISA A LOS PRODUCTORES DE QUE A BORRADO POR SI EN CASO DE QUE ESTE LLENA LA COLA PUEDAN PRODUCIR OTRO
-            colaImpresion.notifyAll();
+            this.notifyAll();
             return elemento;
 
         }

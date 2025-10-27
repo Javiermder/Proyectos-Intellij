@@ -8,7 +8,7 @@ public class BufferStream<T> {
 
     public BufferStream(int max){
         this.max = max;
-        buffer = new ArrayList<>();
+        buffer = new ArrayList<>();  
     }
 
     //ESTE CONSTRUCTOR REALMENTE LLAMA AL CONSTRUCTOR DE ARRIBA
