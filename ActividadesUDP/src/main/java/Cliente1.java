@@ -10,7 +10,7 @@ public class Cliente1 {
     public static void main(String[] args) {
         try {
             DatagramSocket socket = new DatagramSocket();
-            InetAddress serverIP = InetAddress.getByName("192.168.0.105");
+            InetAddress serverIP = InetAddress.getByName("192.168.0.109");
             int port = 5000;
             Scanner sc = new Scanner(System.in);
             String playerId = "PLAYER1";

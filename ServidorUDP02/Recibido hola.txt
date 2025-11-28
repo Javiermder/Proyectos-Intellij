@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Javi</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #000000, #0a1f3a);
+      font-family: Arial, sans-serif;
+      color: #3aa0ff;
+    }
+    h1 {
+      font-size: 3em;
+      text-shadow: 0 0 10px #0066ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Javi y ya está</h1>
+</body>
+</html>
