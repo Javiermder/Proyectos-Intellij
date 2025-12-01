@@ -8,24 +8,34 @@ import java.util.Scanner;
 
 public class Cliente5 {
 
-    private static final String HOST = "localhost";  // Cambiar a IP del servidor si es otra máquina
-    private static final int PUERTO = 5000;
+    private static final String HOST = "localhost";  // Dirección del servidor (cambiar si está en otra máquina)
+    private static final int PUERTO = 5000;          // Puerto del servidor
 
     public static void main(String[] args) {
         try (
+                // Se crea el socket que conecta con el servidor
                 Socket socket = new Socket(HOST, PUERTO);
+
+                // Permite enviar mensajes al servidor
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+
+                // Permite leer mensajes enviados por el servidor
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
+
+                // Se usa para leer texto ingresado por el usuario
                 Scanner scanner = new Scanner(System.in)
         ) {
             System.out.println("Conectado al servidor de juegos");
 
-            // Hilo que lee constantemente los mensajes del servidor
+            // Hilo que se encarga de leer mensajes del servidor sin bloquear el programa principal
             Thread hiloLectura = new Thread(() -> {
                 String linea;
                 try {
+                    // Mientras el servidor envíe líneas, se muestran en consola
                     while ((linea = in.readLine()) != null) {
                         System.out.println("Servidor: " + linea);
+
+                        // Si el servidor envía un mensaje indicando que el juego terminó
                         if (linea.contains("has adivinado")) {
                             System.out.println("Juego terminado. Cerrando cliente...");
                             break;
@@ -35,16 +45,22 @@ public class Cliente5 {
                     System.out.println("Conexión cerrada: " + ex.getMessage());
                 }
             });
-            hiloLectura.start();
 
-            // Bucle para enviar números al servidor
+            hiloLectura.start(); // Inicia el hilo de lectura
+
+            // Bucle principal: el cliente envía números al servidor
             while (true) {
                 System.out.print("Introduce un número: ");
+
+                // Leer número introducido por el usuario
                 String numero = scanner.nextLine();
+
+                // Enviar número al servidor
                 out.println(numero);
 
+                // Si el hilo de lectura terminó, significa que el servidor cerró la conexión
                 if (!hiloLectura.isAlive()) {
-                    break; // si el servidor cerró, salimos
+                    break;
                 }
             }
 
